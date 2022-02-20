@@ -15,10 +15,11 @@ jobs:
         node-version: [15.x]
     steps:
       - uses: actions/checkout@v1
-      - env:
-          CI: false
       - run: npm install
       - run: npm run build
+      
+env:
+  CI: false
       
       
 
