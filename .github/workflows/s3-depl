@@ -1,11 +1,9 @@
 name: s3-depl
 
-# this 'workflow' will run anytime there is a puch to master branch
 on:
   push:
     branches:
       - master
-# these will run in the workflow
 jobs:
   build:
     runs-on: ubuntu-latest
