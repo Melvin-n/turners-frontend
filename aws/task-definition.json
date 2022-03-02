@@ -1,0 +1,87 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::365629983759:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "dnsSearchDomains": [],
+            "environmentFiles": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": [],
+                "options": {
+                    "awslogs-group": "/ecs/deploy-frontend",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-create-group": "true",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "entryPoint": [],
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "containerPort": 3000
+                }
+            ],
+            "command": [],
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": [],
+            "dnsServers": [],
+            "mountPoints": [],
+            "workingDirectory": null,
+            "secrets": [],
+            "dockerSecurityOptions": [],
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "365629983759.dkr.ecr.us-east-1.amazonaws.com/turners-workflow:latest",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": [],
+            "hostname": null,
+            "extraHosts": [],
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": {},
+            "systemControls": [],
+            "privileged": null,
+            "name": "turners-frontend"
+        }
+    ],
+    "memory": "3072",
+    "taskRoleArn": null,
+    "family": "deploy-frontend",
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "runtimePlatform": {
+        "operatingSystemFamily": "LINUX",
+        "cpuArchitecture": "X86_64"
+    },
+    "cpu": "1024",
+    "inferenceAccelerators": [],
+    "proxyConfiguration": null,
+    "volumes": [],
+    "tags": [
+        {
+            "key": "ecs:taskDefinition:createdFrom",
+            "value": "ecs-console-v2"
+        },
+        {
+            "key": "ecs:taskDefinition:stackId",
+            "value": "arn:aws:cloudformation:us-east-1:365629983759:stack/ECS-Console-V2-TaskDefinition-cc0e0160-136a-45fa-b6f5-cb5e300edf4d/9eaab8e0-99bd-11ec-a912-0edbddc56979"
+        }
+    ]
+}
