@@ -1,6 +1,5 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState} from 'react'
 import '../css/chatbox.css'
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 export default function Chatbox() {
 
     const [userMessage, setUserMessage] = useState('')
@@ -41,7 +40,7 @@ export default function Chatbox() {
     useEffect(() => {
         if (openModal) {
       chatMessages.scrollTop = chatMessages.scrollHeight
-    }}, [messageList]);
+    }}, [messageList, chatMessages, openModal]);
 
 
     
