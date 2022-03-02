@@ -1,79 +1,67 @@
 {
-    "ipcMode": null,
-    "executionRoleArn": "arn:aws:iam::365629983759:role/ecsTaskExecutionRole",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:365629983759:task-definition/deploy-frontend-ec2:2",
     "containerDefinitions": [
         {
-            "dnsSearchDomains": [],
-            "environmentFiles": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "secretOptions": [],
-                "options": {
-                    "awslogs-group": "/ecs/deploy-frontend",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-create-group": "true",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            },
-            "entryPoint": [],
+            "name": "turners-frontend-ec2",
+            "image": "365629983759.dkr.ecr.us-east-1.amazonaws.com/turners-workflow:076602356709738dece6829898eabfb066318e5a",
+            "cpu": 0,
+            "links": [],
             "portMappings": [
                 {
+                    "containerPort": 3000,
                     "hostPort": 3000,
-                    "protocol": "tcp",
-                    "containerPort": 3000
+                    "protocol": "tcp"
                 }
             ],
-            "command": [],
-            "linuxParameters": null,
-            "cpu": 0,
-            "environment": [],
-            "resourceRequirements": null,
-            "ulimits": [],
-            "dnsServers": [],
-            "mountPoints": [],
-            "workingDirectory": null,
-            "secrets": [],
-            "dockerSecurityOptions": [],
-            "memory": null,
-            "memoryReservation": null,
-            "volumesFrom": [],
-            "stopTimeout": null,
-            "image": "365629983759.dkr.ecr.us-east-1.amazonaws.com/turners-workflow:latest",
-            "startTimeout": null,
-            "firelensConfiguration": null,
-            "dependsOn": null,
-            "disableNetworking": null,
-            "interactive": null,
-            "healthCheck": null,
             "essential": true,
-            "links": [],
-            "hostname": null,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
             "extraHosts": [],
-            "pseudoTerminal": null,
-            "user": null,
-            "readonlyRootFilesystem": null,
+            "dockerSecurityOptions": [],
             "dockerLabels": {},
-            "systemControls": [],
-            "privileged": null,
-            "name": "turners-frontend"
+            "ulimits": [],
+            "systemControls": []
         }
     ],
-    "memory": "3072",
-    "taskRoleArn": null,
-    "family": "deploy-frontend",
-    "pidMode": null,
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "networkMode": "awsvpc",
-    "runtimePlatform": {
-        "operatingSystemFamily": "LINUX",
-        "cpuArchitecture": "X86_64"
-    },
-    "cpu": "1024",
-    "inferenceAccelerators": [],
-    "proxyConfiguration": null,
+    "family": "deploy-frontend-ec2",
+    "networkMode": "bridge",
+    "revision": 2,
     "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2022-03-02T23:37:17.656Z",
+    "registeredBy": "arn:aws:iam::365629983759:user/Melvin",
     "tags": [
         {
             "key": "ecs:taskDefinition:createdFrom",
@@ -81,7 +69,7 @@
         },
         {
             "key": "ecs:taskDefinition:stackId",
-            "value": "arn:aws:cloudformation:us-east-1:365629983759:stack/ECS-Console-V2-TaskDefinition-cc0e0160-136a-45fa-b6f5-cb5e300edf4d/9eaab8e0-99bd-11ec-a912-0edbddc56979"
+            "value": "arn:aws:cloudformation:us-east-1:365629983759:stack/ECS-Console-V2-TaskDefinition-17306492-1db6-4847-89b6-3f21e47d2c7f/ae7e1540-9a81-11ec-ad1f-0ea9cb45072b"
         }
     ]
 }
