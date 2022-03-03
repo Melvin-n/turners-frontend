@@ -69,6 +69,7 @@ jobs:
           -Dsonar.organization=Melvin-n
           -Dsonar.projectKey=Melvin-n_turners-frontend
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       
       
