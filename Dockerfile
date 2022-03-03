@@ -9,5 +9,7 @@ COPY package-lock.json ./
 COPY ./ ./
 # run npm install on a layer above the image, therefore dependencies will be installed befoe running command
 RUN npm install
+# run tests
+RUN npm test
 # run start command to start react app
 CMD npm start

@@ -19,7 +19,7 @@ describe('remove punctutation from a string', () => {
 
     it('remove %', () => {
         const input = 'hello%world'
-        const expected = 'hello world'
+        const expected = 'hello !world'
         const actual = removePunctuation(input)
         
         expect(actual).toBe(expected)
