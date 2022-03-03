@@ -57,7 +57,8 @@
         "operatingSystemFamily": "LINUX"
     },
     "requiresCompatibilities": [
-        "EC2"
+        "EC2",
+        "FARGATE"
     ],
     "cpu": "1024",
     "memory": "3072",
