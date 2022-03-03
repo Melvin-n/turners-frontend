@@ -1,11 +1,10 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:365629983759:task-definition/deploy-frontend-ec2:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:365629983759:task-definition/deploy-frontend:5",
     "containerDefinitions": [
         {
-            "name": "turners-frontend-ec2",
+            "name": "turners-frontend",
             "image": "365629983759.dkr.ecr.us-east-1.amazonaws.com/turners-workflow:076602356709738dece6829898eabfb066318e5a",
             "cpu": 0,
-            "links": [],
             "portMappings": [
                 {
                     "containerPort": 3000,
@@ -14,41 +13,54 @@
                 }
             ],
             "essential": true,
-            "entryPoint": [],
-            "command": [],
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "secrets": [],
-            "dnsServers": [],
-            "dnsSearchDomains": [],
-            "extraHosts": [],
-            "dockerSecurityOptions": [],
-            "dockerLabels": {},
-            "ulimits": [],
-            "systemControls": []
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/deploy-frontend",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
         }
     ],
-    "family": "deploy-frontend-ec2",
-    "networkMode": "bridge",
-    "revision": 2,
+    "family": "deploy-frontend",
+    "executionRoleArn": "arn:aws:iam::365629983759:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 5,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
         {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EXTERNAL",
         "EC2",
         "FARGATE"
     ],
@@ -57,13 +69,12 @@
         "operatingSystemFamily": "LINUX"
     },
     "requiresCompatibilities": [
-        "EC2",
         "FARGATE"
     ],
     "cpu": "1024",
     "memory": "3072",
-    "registeredAt": "2022-03-02T23:37:17.656Z",
-    "registeredBy": "arn:aws:iam::365629983759:user/Melvin",
+    "registeredAt": "2022-03-02T22:37:31.852Z",
+    "registeredBy": "arn:aws:iam::365629983759:root",
     "tags": [
         {
             "key": "ecs:taskDefinition:createdFrom",
@@ -71,7 +82,7 @@
         },
         {
             "key": "ecs:taskDefinition:stackId",
-            "value": "arn:aws:cloudformation:us-east-1:365629983759:stack/ECS-Console-V2-TaskDefinition-17306492-1db6-4847-89b6-3f21e47d2c7f/ae7e1540-9a81-11ec-ad1f-0ea9cb45072b"
+            "value": "arn:aws:cloudformation:us-east-1:365629983759:stack/ECS-Console-V2-TaskDefinition-cc0e0160-136a-45fa-b6f5-cb5e300edf4d/9eaab8e0-99bd-11ec-a912-0edbddc56979"
         }
     ]
 }
