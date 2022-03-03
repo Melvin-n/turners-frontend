@@ -1,88 +1,77 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:365629983759:task-definition/deploy-frontend:5",
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::365629983759:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
-            "name": "turners-frontend",
-            "image": "365629983759.dkr.ecr.us-east-1.amazonaws.com/turners-workflow:076602356709738dece6829898eabfb066318e5a",
-            "cpu": 0,
-            "portMappings": [
-                {
-                    "containerPort": 3000,
-                    "hostPort": 3000,
-                    "protocol": "tcp"
-                }
-            ],
-            "essential": true,
-            "environment": [],
-            "mountPoints": [],
-            "volumesFrom": [],
+            "dnsSearchDomains": null,
+            "environmentFiles": null,
             "logConfiguration": {
                 "logDriver": "awslogs",
+                "secretOptions": null,
                 "options": {
-                    "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/deploy-frontend",
+                    "awslogs-group": "/ecs/turners-image-final",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
-            }
+            },
+            "entryPoint": null,
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "containerPort": 3000
+                }
+            ],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [],
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "365629983759.dkr.ecr.us-east-1.amazonaws.com/turners-workflow:43826d601a2212fd95dfd15a5eafa31bf3555570",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "turners-final-container"
         }
     ],
-    "family": "deploy-frontend",
-    "executionRoleArn": "arn:aws:iam::365629983759:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
-    "revision": 5,
-    "volumes": [],
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-        }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
-    "runtimePlatform": {
-        "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "LINUX"
-    },
+    "memory": "1024",
+    "taskRoleArn": null,
+    "family": "turners-image-final",
+    "pidMode": null,
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "1024",
-    "memory": "3072",
-    "registeredAt": "2022-03-02T22:37:31.852Z",
-    "registeredBy": "arn:aws:iam::365629983759:root",
-    "tags": [
-        {
-            "key": "ecs:taskDefinition:createdFrom",
-            "value": "ecs-console-v2"
-        },
-        {
-            "key": "ecs:taskDefinition:stackId",
-            "value": "arn:aws:cloudformation:us-east-1:365629983759:stack/ECS-Console-V2-TaskDefinition-cc0e0160-136a-45fa-b6f5-cb5e300edf4d/9eaab8e0-99bd-11ec-a912-0edbddc56979"
-        }
-    ]
+    "networkMode": "awsvpc",
+    "runtimePlatform": {
+        "operatingSystemFamily": "LINUX",
+        "cpuArchitecture": null
+    },
+    "cpu": "512",
+    "inferenceAccelerators": [],
+    "proxyConfiguration": null,
+    "volumes": [],
+    "tags": []
 }
