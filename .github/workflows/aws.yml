@@ -65,7 +65,6 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
-        projectBaseDir: turners-frontend
         args: >
           -Dsonar.organization=Melvin-n
           -Dsonar.projectKey=Melvin-n_turners-frontend
