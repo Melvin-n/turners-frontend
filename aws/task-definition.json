@@ -3,7 +3,6 @@
     "executionRoleArn": "arn:aws:iam::365629983759:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
-            "name": "turners-frontend",
             "dnsSearchDomains": null,
             "environmentFiles": null,
             "logConfiguration": {
