@@ -6,7 +6,7 @@
     --message-blue-theme: #0c6ab8;
     --light-grey: rgb(212, 211, 211);
     --red: firebrick;
-
+    
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 
     margin-top: 1.5vh;
     text-decoration: underline;
-    text-decoration-color: var(--red);
+    text-decoration-color: var(--light-blue-theme);
     text-decoration-thickness: 5px;
 }
 
